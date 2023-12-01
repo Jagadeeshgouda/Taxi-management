@@ -19,4 +19,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'your mail id' 
 EMAIL_HOST_PASSWORD = 'your password'
 
-# replace your mail id and password
+$replace your mail id and password
