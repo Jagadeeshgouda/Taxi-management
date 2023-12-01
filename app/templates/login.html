@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet"  type="text/css" media='screen' href="{% static "styles/main.css" %}">
+<p>this a  Login  page.</p>
+<div id="user" style="margin-left:600px;">
+<form action="" method = "POST">
+    <h1>Login Page</h1>
+    {% csrf_token %}
+    <div id="formContent">
+        <div class="form-group">
+             <div class="form-group input-group">
+                <div class="input-group-prepend"> 
+            <div class="card bg-light">
+    {% for field in form %}
+    <div style="padding-left:40px;padding-right:40px;padding-top:20px">
+        <p>{{ field.label }}: {{ field }}</p>
+        {% for error in field.errors %}
+        <small style="color:red">{{ error }}</small>
+        {% endfor %}
+    </div>
+
+    {% endfor %}
+
+
+<button id="btn" type='submit' style="margin-left:100px;margin-right:100px;">Submit</button>
+<br><br>
+<a href="/newuser" style="padding-left:30px;padding-bottom:20px"> if you not have account?</a>
+<a href="/changepassword" style="padding-bottom:20px;padding-left:30px"> change password!</a>
+<br>
+
+
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock content %}
